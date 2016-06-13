@@ -39,7 +39,9 @@ void loop()
   
   if(waiting and buzzer_first_pressed != 0)
   {
-    Serial.println(buzzer_first_pressed);
+    Serial.print(buzzer_first_pressed);
+    Serial.print("\n");
+    
     buzzer_first_pressed = 0;
     waiting = 0;
   }
@@ -49,15 +51,15 @@ void loop()
     if(input.equals("reset"))
     {
       waiting = false;
-      Serial.println("ready");
+      Serial.print("ready\n");
     }
     else if(input.equals("start"))
     {
       waiting = true;
-      Serial.println("ready");
+      Serial.print("ready\n");
     }
     else
-      Serial.println("unknown command");
+      Serial.print("unknown command\n");
       
     input_complete = false;
     input = ""; 
