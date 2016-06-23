@@ -19,7 +19,7 @@ boolean input_complete = false;
 void setup()
 {
   Serial.begin(9600);
-  
+
   input.reserve(200);
 
   for(int i = 0; i < buzzer_pins_count; i ++)
@@ -34,18 +34,18 @@ void setup()
 void loop()
 {
   update_input();
-  
+
   update_buzzer();
-  
+
   if(waiting and buzzer_first_pressed != 0)
   {
     Serial.print(buzzer_first_pressed);
     Serial.print("\n");
-    
+
     buzzer_first_pressed = 0;
     waiting = 0;
   }
-  
+
   if(input_complete)
   {
     if(input.equals("reset"))
@@ -60,9 +60,9 @@ void loop()
     }
     else
       Serial.print("unknown command\n");
-      
+
     input_complete = false;
-    input = ""; 
+    input = "";
   }
 }
 
@@ -87,16 +87,16 @@ void update_input()
 void update_buzzer()
 {
   for(int i = 0; i < buzzer_pins_count; i ++)
-  {  
+  {
     if((millis() - buzzer_debounce[i]) > debounce_delay)
     {
       int value = digitalRead(buzzer_pins[i]);
-      
+
       if(value != buzzer_last_values[i])
       {
         buzzer_last_values[i] = value;
         buzzer_debounce[i] = millis();
-              
+
         if(value == LOW && waiting && buzzer_first_pressed == 0)
           buzzer_first_pressed = i+1;
       }
