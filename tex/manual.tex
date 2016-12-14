@@ -3,7 +3,7 @@
 \usepackage[utf8]{inputenc}
 
 \usepackage{graphicx}
-\usepackage{tabularx}
+\usepackage{longtable}
 \usepackage{color}
 
 \pagenumbering{gobble}
@@ -14,19 +14,22 @@
 \begin{document}
     \maketitle
 
-    \begin{tabularx}{\textwidth}{|X|X|X|}
+    \large{
+    \begin{longtable}{|l|l|p{7cm}|}
         \hline
         \textbf{Part} & \textbf{Quantity} & \textbf{Image} \\
         \hline
-        Mainboard & 1 & \\
+        \endhead
+        Controller & 1 & \newline \raisebox{-.5\height}{\includegraphics[width=6cm]{imgs/box}} \newline \\
         \hline
-        USB cable & 1 & \\
+        USB cable & 1 & \newline \raisebox{-.5\height}{\includegraphics[width=6cm]{imgs/usb}} \newline \\
         \hline
-        Buzzer & 8 & \\
+        Buzzer & 8 & \newline \raisebox{-.5\height}{\includegraphics[width=6cm]{imgs/buzzer}} \newline \\
         \hline
-        Buzzer, big & 1 & \\
+        Buzzer, big & 1 & \newline \raisebox{-.5\height}{\includegraphics[width=6cm]{imgs/buzzer-big}} \newline \\
         \hline
-        XLR cable, 10m & 10 & \\
+        XLR cable, 10m & 10 & \newline \raisebox{-.5\height}{\includegraphics[width=6cm]{imgs/xlr}} \newline \\
         \hline
-    \end{tabularx}
+    \end{longtable}
+    }
 \end{document}
