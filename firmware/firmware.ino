@@ -1,5 +1,12 @@
 // configuration
-int buzzer_pins[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, A0, A1, A2, A3, A4, A5, };
+
+// the used pins are 0 - 12 and A1 - A4
+// there is a connector for A5 on the board, but it did not work and we do not need it
+//
+// the pins are sorted so that the numbers written on the controller case are correct
+// if you change the cabling you might need to sort them again
+//int buzzer_pins[] = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, A0, A1, A2, A3, A4, };
+int buzzer_pins[] = {5, 4, 3, 2, 0, 1, A0, A1, A2, A3, A4, 7, 12, 11, 10, 9, 8, 6 };
 long debounce_delay = 50;
 
 // internal variables
