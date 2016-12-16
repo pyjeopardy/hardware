@@ -28,6 +28,11 @@ Each part is needed once for one buzzer.
 | XLR connector (female)    | 18       | Conrad   | 651096 - 62   | Neutrik NC3FAAV1                        |
 | Neutrik screws            | 1        | Thomann  | 300310        | A-Screw-1-8 for Neutrik XLR             |
 
+Additionally there is a USB-B jack screwed into the case and connected to the
+Arduino. The controller then is connected with an USB-A to USB-B cable. This
+seems to be a more robust solution than exposing the Micro USB connector of
+the Arduino.
+
 ## Pin assignment and colors
 
 | Pin |        | Color  |
@@ -42,3 +47,12 @@ some day.
 
 On the controller board, the pin next to the Arduino is the signal pin and
 and therefore needs to be connected to the yellow wire.
+
+## Notes
+
+ * The internal pull-ups of the Arduino are used
+ * The Arduino is not soldered on the board but connected using the socket
+   strips, therefore it is quite easy to replace it.
+ * The order of the button numbers can be changed in the Arduino sketch in
+   `firmware/firmware.ino`. You may need to fix this again after disassembling
+   the hardware.
